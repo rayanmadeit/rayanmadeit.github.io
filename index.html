@@ -1,0 +1,1960 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Published site: script.js reads the site version from this value
+       (working files read it from their name, index_rayanmadeit_V###.html). -->
+  <script>window.RMI_SITE_VERSION = 208;</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Rayan Made It — Paris-based composer and sound artist. Music production and sound design for artists, films and images.">
+  <title>Rayan Made It — Music Production &amp; Sound Design</title>
+
+  <!-- V205: SHARE PREVIEW + ICONS + BROWSER COLOR.
+       PROVISIONAL DOMAIN: replace https://www.rayanmadeit.com (3 occurrences below)
+       with the real address once the domain is bought. Social apps (WhatsApp,
+       iMessage, LinkedIn...) need absolute URLs for the preview image.
+       Paths 'assets/' become 'assets/' when the final page moves to the root. -->
+  <meta name="theme-color" content="#111110">
+  <meta name="apple-mobile-web-app-title" content="Rayan Made It">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="icon" href="assets/icons/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Rayan Made It">
+  <meta property="og:title" content="Rayan Made It — Music Production &amp; Sound Design">
+  <meta property="og:description" content="Paris-based composer and sound artist. Music production and sound design for artists, films and images.">
+  <meta property="og:url" content="https://www.rayanmadeit.com/">
+  <meta property="og:image" content="https://www.rayanmadeit.com/assets/icons/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Rayan Made It">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://www.rayanmadeit.com/assets/icons/og-image.jpg">
+  <!-- V204: WEB FONTS EMBEDDED. Neue Montreal and Alte Haas Grotesk were used
+       everywhere in styles.css but never loaded: visitors without the fonts
+       installed (every phone, most computers) saw Arial. Applies to desktop and
+       mobile. Files: assets/fonts/*.woff (originals .otf/.ttf kept alongside).
+       When the final page moves to the PORTFOLIO root, 'assets/' becomes
+       'assets/'. -->
+  <link rel="preload" href="assets/fonts/NeueMontreal-Medium.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="assets/fonts/NeueMontreal-Regular.woff" as="font" type="font/woff" crossorigin>
+  <style>
+    @font-face { font-family: 'Neue Montreal'; src: url('assets/fonts/NeueMontreal-Light.woff') format('woff'); font-weight: 300; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Neue Montreal'; src: url('assets/fonts/NeueMontreal-LightItalic.woff') format('woff'); font-weight: 300; font-style: italic; font-display: swap; }
+    @font-face { font-family: 'Neue Montreal'; src: url('assets/fonts/NeueMontreal-Regular.woff') format('woff'); font-weight: 400; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Neue Montreal'; src: url('assets/fonts/NeueMontreal-Italic.woff') format('woff'); font-weight: 400; font-style: italic; font-display: swap; }
+    @font-face { font-family: 'Neue Montreal'; src: url('assets/fonts/NeueMontreal-Medium.woff') format('woff'); font-weight: 500; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Neue Montreal'; src: url('assets/fonts/NeueMontreal-MediumItalic.woff') format('woff'); font-weight: 500; font-style: italic; font-display: swap; }
+    @font-face { font-family: 'Neue Montreal'; src: url('assets/fonts/NeueMontreal-Bold.woff') format('woff'); font-weight: 700; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Neue Montreal'; src: url('assets/fonts/NeueMontreal-BoldItalic.woff') format('woff'); font-weight: 700; font-style: italic; font-display: swap; }
+    @font-face { font-family: 'Alte Haas Grotesk'; src: url('assets/fonts/AlteHaasGrotesk-Regular.woff') format('woff'); font-weight: 400; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Alte Haas Grotesk'; src: url('assets/fonts/AlteHaasGrotesk-Bold.woff') format('woff'); font-weight: 700; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'Bootzy'; src: url('assets/fonts/Bootzy.woff') format('woff'); font-weight: 400; font-style: normal; font-display: swap; }
+  </style>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+  <style>
+    /* ==========================================================================
+       RAYAN MADE IT — V186 RESPONSIVE MOBILE ADAPTATION
+       STRICTLY SCOPED TO SMARTPHONE VIEWPORTS — ZERO DESKTOP REGRESSION LOCK
+       ========================================================================== */
+    /* V207: the mobile layout also applies to a PHONE HELD SIDEWAYS (touch screen,
+       less than 500px tall). Before, a phone in landscape is wider than 767px and
+       got the desktop layout squeezed into ~430px of height. Tablets/desktop: unchanged. */
+    @media (max-width: 767px), (hover: none) and (pointer: coarse) and (max-height: 500px) {
+      :root {
+        --header-height: calc(56px + env(safe-area-inset-top, 0px));
+      }
+
+      html, body {
+        max-width: 100vw !important;
+        overflow-x: hidden !important;
+      }
+
+      /* --------------------------------------------------
+         1. GLOBAL HEADER & EDITORIAL NAVIGATION
+         -------------------------------------------------- */
+      header {
+        height: var(--header-height) !important;
+        padding: env(safe-area-inset-top, 0px) 16px 0 16px !important;
+        background: rgba(17, 17, 16, 0.85) !important;
+        backdrop-filter: blur(12px) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
+        z-index: 200 !important;
+      }
+
+      .header-container {
+        height: 56px !important;
+        padding: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+      }
+
+      .logo {
+        font-size: 14.5px !important;
+        letter-spacing: 0.04em !important;
+        font-weight: 500 !important;
+        color: #FFFFFF !important;
+        z-index: 210 !important;
+        cursor: pointer !important;
+        white-space: nowrap !important;
+      }
+
+      /* Discreet dynamic counter in header on mobile */
+      .project-counter {
+        display: block !important;
+        font-family: 'Plus Jakarta Sans', -apple-system, sans-serif !important;
+        font-size: 11px !important;
+        letter-spacing: 0.14em !important;
+        color: rgba(245, 244, 240, 0.45) !important;
+        margin-left: auto !important;
+        margin-right: 14px !important;
+        z-index: 210 !important;
+      }
+
+      body.about-active .project-counter,
+      body.contact-active .project-counter {
+        display: none !important;
+      }
+
+      /* Minimal editorial hamburger button */
+      .menu-toggle {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 44px !important;
+        height: 44px !important;
+        padding: 0 !important;
+        margin-right: -8px !important;
+        background: transparent !important;
+        border: none !important;
+        cursor: pointer !important;
+        z-index: 210 !important;
+        outline: none !important;
+      }
+
+      .menu-toggle span {
+        display: block !important;
+        width: 20px !important;
+        height: 1.5px !important;
+        background-color: #FFFFFF !important;
+        margin: 2.5px 0 !important;
+        transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease !important;
+      }
+
+      .menu-toggle.open span:nth-child(1) {
+        transform: translateY(6.5px) rotate(45deg) !important;
+      }
+
+      .menu-toggle.open span:nth-child(2) {
+        opacity: 0 !important;
+      }
+
+      .menu-toggle.open span:nth-child(3) {
+        transform: translateY(-6.5px) rotate(-45deg) !important;
+      }
+
+      /* Fullscreen dark editorial navigation menu */
+      .nav-links-wrapper {
+        position: fixed !important;
+        inset: 0 !important;
+        width: 100vw !important;
+        height: 100dvh !important;
+        background-color: rgba(0, 0, 0, 0.96) !important;
+        backdrop-filter: blur(18px) !important;
+        -webkit-backdrop-filter: blur(18px) !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+        z-index: 205 !important;
+        transition: opacity 0.32s cubic-bezier(0.16, 1, 0.3, 1), transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.32s !important;
+        transform: translateY(-6px) !important;
+      }
+
+      .nav-links-wrapper.mobile-active {
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        transform: translateY(0) !important;
+      }
+
+      .nav-links {
+        position: static !important;
+        width: 100% !important;
+        height: auto !important;
+        background: transparent !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 30px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        list-style: none !important;
+        opacity: 1 !important;
+        pointer-events: none !important;
+        transform: none !important;
+      }
+
+      .nav-links-wrapper.mobile-active .nav-links {
+        pointer-events: auto !important;
+      }
+
+      .nav-item {
+        width: 100% !important;
+        text-align: center !important;
+      }
+
+      .nav-link {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        min-height: 48px !important;
+        padding: 10px 24px !important;
+        font-family: 'Plus Jakarta Sans', -apple-system, sans-serif !important;
+        font-size: 17px !important;
+        font-weight: 400 !important;
+        letter-spacing: 0.12em !important;
+        text-transform: uppercase !important;
+        color: rgba(245, 244, 240, 0.65) !important;
+        background: transparent !important;
+        border: none !important;
+        cursor: pointer !important;
+        transition: color 0.2s ease, transform 0.2s ease !important;
+      }
+
+      .nav-link:active,
+      .nav-link:hover {
+        color: #FFFFFF !important;
+        transform: scale(1.04) !important;
+      }
+
+      /* --------------------------------------------------
+         2. HOMEPAGE — MOBILE
+         -------------------------------------------------- */
+      #home.tab-section {
+        padding: 0 !important;
+        position: fixed !important;
+        inset: 0 !important;
+        width: 100vw !important;
+        height: 100dvh !important;
+        overflow: hidden !important;
+        touch-action: pan-y;
+      }
+
+      .home-slideshow-container {
+        position: fixed !important;
+        inset: 0 !important;
+        width: 100vw !important;
+        height: 100dvh !important;
+        overflow: hidden !important;
+      }
+
+      .slideshow-viewport {
+        width: 100% !important;
+        height: 100% !important;
+      }
+
+      .version-v129-plus .slide-inner {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        height: 100% !important;
+        padding: calc(var(--header-height) + 10px) 16px calc(80px + env(safe-area-inset-bottom, 0px)) 16px !important;
+        box-sizing: border-box !important;
+      }
+
+      .version-v129-plus .slide-media,
+      .version-v129-plus .slide-video-media {
+        max-width: calc(100vw - 32px) !important;
+        max-height: 54vh !important;
+        width: auto !important;
+        height: auto !important;
+        object-fit: contain !important;
+        transform: translateY(0) !important;
+        border-radius: 2px !important;
+        cursor: pointer !important;
+      }
+
+      /* Square media: VELIB'BLEU (1:1 ratio preserved) */
+      .version-v129-plus .slide[data-proj-id="velib-bleu"] .slide-media,
+      .version-v129-plus .slide[data-proj-id="velib-bleu"] .slide-video-media,
+      .version-v129-plus .slide-media[data-proj-id="velib-bleu"],
+      .version-v129-plus .slide-video-media[data-video-src*="velib_bleu"] {
+        aspect-ratio: 1 / 1 !important;
+        width: min(calc(100vw - 40px), 48vh) !important;
+        height: min(calc(100vw - 40px), 48vh) !important;
+        max-width: min(calc(100vw - 40px), 48vh) !important;
+        max-height: min(calc(100vw - 40px), 48vh) !important;
+        object-fit: cover !important;
+        transform: translateY(0) !important;
+      }
+
+      /* 16:9 media: SIDI GO CRAZY & SIDI CASSÉ */
+      .version-v129-plus .slide[data-proj-id="sidi-go-crazy"] .slide-media,
+      .version-v129-plus .slide[data-proj-id="sidi-go-crazy"] .slide-video-media,
+      .version-v129-plus .slide[data-proj-id="sidi-casse"] .slide-media,
+      .version-v129-plus .slide[data-proj-id="sidi-casse"] .slide-video-media {
+        aspect-ratio: 16 / 9 !important;
+        width: calc(100vw - 32px) !important;
+        max-width: calc(100vw - 32px) !important;
+        height: auto !important;
+        object-fit: cover !important;
+        transform: translateY(0) !important;
+      }
+
+      /* Play/pause overlay button */
+      .version-v129-plus .home-play-overlay-btn,
+      .version-v129-plus .home-pause-overlay-btn {
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        width: 52px !important;
+        height: 52px !important;
+      }
+
+      /* Editorial caption below media */
+      .version-v129-plus .slide-caption-wrapper {
+        position: absolute !important;
+        bottom: calc(24px + env(safe-area-inset-bottom, 0px)) !important;
+        left: 20px !important;
+        right: 70px !important;
+        width: auto !important;
+        max-width: calc(100vw - 90px) !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 3px !important;
+        pointer-events: none !important;
+        z-index: 15 !important;
+      }
+
+      .version-v129-plus .slide-caption-wrapper .slide-title {
+        font-size: 13.5px !important;
+        line-height: 1.25 !important;
+        letter-spacing: -0.01em !important;
+        font-weight: 500 !important;
+        color: #FFFFFF !important;
+      }
+
+      .version-v129-plus .slide-caption-wrapper .slide-type {
+        font-size: 9px !important;
+        line-height: 1.2 !important;
+        letter-spacing: 0.08em !important;
+        color: rgba(245, 244, 240, 0.5) !important;
+      }
+
+      /* Discreet bottom dots on Homepage */
+      .home-dots-wrapper {
+        position: absolute !important;
+        bottom: calc(26px + env(safe-area-inset-bottom, 0px)) !important;
+        right: 20px !important;
+        left: auto !important;
+        transform: none !important;
+        z-index: 16 !important;
+      }
+
+      .home-dots-track {
+        gap: 6px !important;
+      }
+
+      .home-dot {
+        width: 5px !important;
+        height: 5px !important;
+        min-width: 5px !important;
+        min-height: 5px !important;
+      }
+
+      /* V199: CAPTION UNDER THE MEDIA. The title + credits used to sit at the very
+         bottom of the screen, far below the media. The gesture script measures the
+         active slide's media and exposes its position; the caption is then placed
+         14px under it, aligned on its left edge, and glides when the next project
+         has a different format (16:9, 4:3, square). Without the measurement
+         (class missing) the previous bottom position stays as a fallback. */
+      #home .slide-caption-wrapper.v199-placed {
+        position: fixed !important;
+        top: calc(var(--home-media-bottom, 70dvh) + 14px) !important;
+        bottom: auto !important;
+        left: var(--home-media-left, 20px) !important;
+        right: auto !important;
+        width: var(--home-media-width, calc(100vw - 40px)) !important;
+        max-width: none !important;
+        transition: top 0.5s cubic-bezier(0.22, 1, 0.36, 1), left 0.5s cubic-bezier(0.22, 1, 0.36, 1), width 0.5s cubic-bezier(0.22, 1, 0.36, 1) !important;
+      }
+
+      /* V199: dots stay at the bottom, now centered (the caption moved up). */
+      #home .home-dots-wrapper {
+        left: 50% !important;
+        right: auto !important;
+        transform: translateX(-50%) !important;
+        bottom: calc(28px + env(safe-area-inset-bottom, 0px)) !important;
+      }
+
+      /* V200: on mobile there is no mouse to "wake" the interface, so the
+         immersive auto-hide (body.hide-ui-active after 2s, from styles.css) no
+         longer hides the header, counter, caption and dots. Only the central
+         play/pause icon still fades while a video plays. */
+      html body.home-active.hide-ui-active header,
+      html body.home-active.hide-ui-active .project-counter,
+      html body.home-active.hide-ui-active #home .slide-caption-wrapper,
+      html body.home-active.hide-ui-active #home .home-dots-wrapper {
+        opacity: 1 !important;
+        transition: opacity 0.3s ease !important;
+      }
+      html body.home-active.hide-ui-active header,
+      html body.home-active.hide-ui-active #home .home-dots-wrapper {
+        pointer-events: auto !important;
+      }
+
+      /* --------------------------------------------------
+         3. PRODUCTION — MOBILE (V198 REFINEMENT)
+         -------------------------------------------------- */
+      #production.tab-section {
+        position: fixed !important;
+        inset: 0 !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100vw !important;
+        height: 100dvh !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        background-color: #111110 !important;
+        overflow: hidden !important;
+      }
+
+      #production .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+
+      .version-v86-plus .production-editorial-view,
+      .version-v86-plus .v86-project-viewport,
+      .version-v86-plus .v86-project-rail {
+        position: absolute !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+      }
+
+      #production .v86-project-slot,
+      .version-v74-plus #production .v86-project-slot,
+      .version-v86-plus .v86-project-slot,
+      .version-v100-plus .v86-project-slot,
+      .version-v101-plus .v86-project-slot {
+        position: absolute !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        -webkit-overflow-scrolling: touch !important;
+        overscroll-behavior-y: contain !important;
+      }
+
+      /* V198: single cover size shared by every Production state (see also the
+         max-height: 540px block at the end, which caps it by height). */
+      #production {
+        --prod-cover-size: min(86vw, 375px);
+      }
+
+      /* V192: CONTINUOUS VERTICAL RAIL ON MOBILE.
+         The slot rule above (inset: 0, with an #production ID selector) also pinned
+         the ADJACENT slot at top: 0, so the next project overlapped the current one,
+         both slid off together (black gap), then the next one popped in.
+         Restore the rail geometry from styles.css: next project waits just below the
+         screen (+100%), previous just above (-100%), so the column moves as one. */
+      #production .v86-project-slot.v86-slot-adjacent.place-below {
+        top: 100% !important;
+        bottom: auto !important;
+      }
+      #production .v86-project-slot.v86-slot-adjacent.place-above {
+        top: -100% !important;
+        bottom: auto !important;
+      }
+
+      /* V192: softer rail motion on mobile. script.js sets the rail transition
+         inline (1150ms, strong ease-in-out). Only timing is overridden here: the
+         resets that use 'transition: none' stay instant (no property animates).
+         Ease-out: starts with the swipe's momentum, then settles gently. */
+      #production .v86-project-rail {
+        transition-duration: 900ms !important;
+        transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1) !important;
+        will-change: transform;
+      }
+
+      /* Production Stage: Clean scrollable container with natural safe padding */
+      .version-v74-plus .v74-production-stage {
+        position: relative !important;
+        width: 100% !important;
+        min-height: 100% !important;
+        height: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        box-sizing: border-box !important;
+        padding-top: calc(var(--header-height) + 8px) !important;
+        padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px)) !important;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+        overflow: visible !important;
+      }
+
+      /* Disable dynamic ::before / ::after auto margins that caused abrupt vertical jumping */
+      .version-v74-plus .v74-production-stage::before,
+      .version-v74-plus .v74-production-stage::after {
+        display: none !important;
+        content: none !important;
+      }
+
+      /* Main Composition: Fluid 86% width (max 375px), centered horizontally.
+         V190: state selectors so the desktop open/closing rules (left: 34vw / 50vw
+         in shared styles.css) can never win on mobile: no horizontal movement.
+         V191: vertical position fixed. The scroll slot already starts under the
+         header and the stage adds header + 8px of padding, so that offset is now
+         subtracted: the closed composition (title + cover + credits ~ cover + 75px)
+         is truly centered in the visible area (it sat ~60px too low before). */
+      .version-v74-plus .v74-main-composition,
+      .version-v74-plus .v74-production-stage.state-closed .v74-main-composition,
+      .version-v74-plus .v74-production-stage.state-resetting .v74-main-composition,
+      .version-v74-plus .v74-production-stage.state-resetting-to-origin .v74-main-composition {
+        position: relative !important;
+        left: 0 !important;
+        top: auto !important;
+        transform: none !important;
+        width: 86vw !important;
+        max-width: 375px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        margin-bottom: 0 !important;
+        margin-top: calc(max(10px, (100dvh - var(--header-height) - env(safe-area-inset-bottom, 0px) - var(--prod-cover-size) - 75px) / 2 - var(--header-height) - 8px)) !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        z-index: 10 !important;
+        transition: none !important;
+      }
+
+      /* V191 OPEN (option A): the whole composition glides UP (vertical only) so
+         title + cover + credits + player + CLOSE (~ cover + 262px) fit on screen.
+         The floor (12px - header) cancels the stage's extra header padding, so on short
+         screens (Safari bars) the title can rise to ~20px under the header; below that the slot scrolls. */
+      .version-v74-plus .v74-production-stage.is-project-moved .v74-main-composition,
+      .version-v74-plus .v74-production-stage.is-listening .v74-main-composition,
+      .version-v74-plus .v74-production-stage.state-open .v74-main-composition,
+      .version-v74-plus .v74-production-stage.state-opening .v74-main-composition {
+        position: relative !important;
+        left: 0 !important;
+        top: auto !important;
+        transform: none !important;
+        margin-top: calc(max(12px - var(--header-height), (100dvh - var(--header-height) - env(safe-area-inset-bottom, 0px) - var(--prod-cover-size) - 262px) / 2 - var(--header-height) - 8px)) !important;
+        transition: margin-top 0.75s cubic-bezier(0.22, 1, 0.36, 1) !important;
+      }
+
+      /* V191 CLOSING: exact reverse, the composition glides back DOWN to the
+         closed position. The sub-pixel 'left' transition (invisible) has the same
+         duration and emits the 'left' transitionend that closeListeningV74() in
+         script.js waits for, so the close finalizes only once the glide is done. */
+      .version-v74-plus .v74-production-stage.state-closing .v74-main-composition,
+      .version-v74-plus .v74-production-stage.state-closing.is-project-moved .v74-main-composition,
+      .version-v74-plus .v74-production-stage.state-closing.is-listening .v74-main-composition,
+      .version-v74-plus .v74-production-stage.state-closing.state-open .v74-main-composition {
+        position: relative !important;
+        left: 0.001px !important;
+        top: auto !important;
+        transform: none !important;
+        margin-top: calc(max(10px, (100dvh - var(--header-height) - env(safe-area-inset-bottom, 0px) - var(--prod-cover-size) - 75px) / 2 - var(--header-height) - 8px)) !important;
+        transition: margin-top 0.75s cubic-bezier(0.45, 0, 0.55, 1), left 0.75s linear !important;
+      }
+
+      /* V193: CLOSE = the player tucks back INTO the cover. While it fades it rises
+         toward the cover and passes BEHIND it (z-index under the composition),
+         as the composition glides back down. Pure vertical motion, no desktop
+         -6vw slide. Same specificity as the desktop rules in styles.css, declared
+         later, so these win on mobile only. Used by CLOSE and, since V194, during the swipe itself. */
+      .version-v74-plus .v74-production-stage.state-closing .v74-listening-area,
+      .version-v74-plus .v74-production-stage.state-closing.is-panel-shown .v74-listening-area,
+      .version-v74-plus .v74-production-stage.state-closing.is-listening .v74-listening-area,
+      .version-v74-plus .v74-production-stage.state-closing.state-open .v74-listening-area {
+        z-index: 1 !important;
+        transform: translateY(-48px) !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.65s cubic-bezier(0.45, 0, 0.55, 1) !important;
+      }
+      .version-v74-plus .v74-production-stage.state-resetting .v74-listening-area,
+      .version-v74-plus .v74-production-stage.state-resetting.is-panel-shown .v74-listening-area,
+      .version-v74-plus .v74-production-stage.state-resetting.is-listening .v74-listening-area,
+      .version-v74-plus .v74-production-stage.state-resetting-to-origin .v74-listening-area,
+      .version-v74-plus .v74-production-stage.state-resetting-to-origin.is-panel-shown .v74-listening-area,
+      .version-v74-plus .v74-production-stage.state-resetting-to-origin.is-listening .v74-listening-area {
+        z-index: 1 !important;
+        transform: translateY(-48px) !important;
+        opacity: 0 !important;
+        transition: none !important;
+        pointer-events: none !important;
+      }
+
+      /* V195/V196: SWIPE WHILE PLAYER IS OPEN (class v195-swipe-close, added by the
+         gesture script below). V196: tuck shortened to ~0.3s and the rail starts in
+         the same frame (no lead delay) with a soft-start curve, no hesitation. The composition stays at its OPEN position (no
+         glide down against the upward swipe) and the player visibly tucks INTO
+         the cover: it rises ~90px behind it, shrinks slightly and fades, while
+         the rail starts with a gentle ease-in-out so the tuck reads on screen. */
+      #production .v74-production-stage.v195-swipe-close .v74-main-composition {
+        margin-top: calc(max(12px - var(--header-height), (100dvh - var(--header-height) - env(safe-area-inset-bottom, 0px) - var(--prod-cover-size) - 262px) / 2 - var(--header-height) - 8px)) !important;
+        left: 0 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+      /* V197: the swipe-close is a clean FOLD into the cover instead of a slide:
+         the whole player block (label, Spotify card, tracklist, CLOSE) is clipped
+         from its bottom edge upward while it rises slightly and fades, so nothing
+         ever slides over the transparent credits line. One single motion, the same
+         on every swipe (the Spotify iframe is no longer blanked mid-fade, see JS). */
+      #production .v74-production-stage .v74-listening-area {
+        clip-path: inset(0 0 0 0);
+      }
+      #production .v74-production-stage.v195-swipe-close .v74-listening-area {
+        z-index: 1 !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        transform: translateY(-14px) !important;
+        clip-path: inset(0 0 100% 0) !important;
+        transition: clip-path 0.34s cubic-bezier(0.4, 0, 0.2, 1), transform 0.34s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.28s cubic-bezier(0.4, 0, 1, 1) !important;
+      }
+      #production.v195-rail-from-open .v86-project-rail {
+        transition-duration: 850ms !important;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+      }
+
+      /* V190: no tap highlight / text selection box on Production mobile */
+      #production,
+      #production * {
+        -webkit-tap-highlight-color: transparent !important;
+      }
+
+      #production .v74-header-block,
+      #production .v74-project-title,
+      #production .v74-project-artist,
+      #production .v47-marquee {
+        -webkit-user-select: none !important;
+        user-select: none !important;
+        -webkit-touch-callout: none !important;
+      }
+
+      #production .v74-cover:focus,
+      #production .v74-project-title:focus,
+      #production .v74-close-btn:focus:not(:focus-visible) {
+        outline: none !important;
+      }
+
+      /* Title & Artist (Compact, intentional spacing above cover) */
+      .version-v74-plus .v74-header-block {
+        margin-bottom: 10px !important;
+        text-align: center !important;
+        width: 100% !important;
+      }
+
+      .version-v74-plus .v74-project-title {
+        font-family: "Alte Haas Grotesk", Arial, sans-serif !important;
+        font-size: clamp(16px, 4.4vw, 18px) !important;
+        line-height: 1.25 !important;
+        font-weight: 400 !important;
+        letter-spacing: 0.025em !important;
+        text-transform: uppercase !important;
+        color: #FFFFFF !important;
+        max-width: 100% !important;
+      }
+
+      .version-v74-plus .v74-project-artist {
+        font-family: "Alte Haas Grotesk", Arial, sans-serif !important;
+        font-size: clamp(11px, 2.9vw, 12.5px) !important;
+        letter-spacing: 0.12em !important;
+        text-transform: uppercase !important;
+        color: rgba(245, 244, 240, 0.5) !important;
+        margin-top: 3px !important;
+      }
+
+      /* 1:1 Square Cover Artwork: Dominant visual object */
+      .version-v74-plus .v74-cover {
+        width: 100% !important;
+        aspect-ratio: 1 / 1 !important;
+        border-radius: 4px !important;
+        overflow: hidden !important;
+        cursor: pointer !important;
+        position: relative !important;
+        touch-action: manipulation !important;
+        background: #111110 !important;
+      }
+
+      .version-v74-plus .v74-cover-img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        display: block !important;
+        border-radius: 4px !important;
+      }
+
+      /* LISTEN Button — Exact Geometric Center of Cover */
+      .version-v74-plus .v74-cover-overlay {
+        position: absolute !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        pointer-events: none !important;
+        transition: opacity 220ms ease !important;
+      }
+
+      .version-v74-plus .v74-production-stage.state-closed .v74-cover-overlay,
+      .version-v74-plus .v74-production-stage:not(.is-project-moved):not(.is-listening) .v74-cover-overlay {
+        opacity: 1 !important;
+        background: rgba(0, 0, 0, 0.15) !important;
+      }
+
+      .version-v74-plus .v74-production-stage.state-closed .v74-cover-overlay span,
+      .version-v74-plus .v74-production-stage:not(.is-project-moved):not(.is-listening) .v74-cover-overlay span {
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        font-family: "Alte Haas Grotesk", Arial, sans-serif !important;
+        font-size: 14px !important;
+        font-weight: 400 !important;
+        letter-spacing: 0.18em !important;
+        color: rgba(255, 255, 255, 0.95) !important;
+        text-transform: uppercase !important;
+        white-space: nowrap !important;
+        background: rgba(17, 17, 16, 0.45) !important;
+        border: 1px solid rgba(255, 255, 255, 0.22) !important;
+        border-radius: 20px !important;
+        padding: 6px 18px !important;
+        backdrop-filter: blur(8px) !important;
+        -webkit-backdrop-filter: blur(8px) !important;
+        pointer-events: none !important;
+      }
+
+      /* Hide LISTEN button when open, opening, or closing */
+      .version-v74-plus .v74-production-stage.is-project-moved .v74-cover-overlay,
+      .version-v74-plus .v74-production-stage.is-listening .v74-cover-overlay,
+      .version-v74-plus .v74-production-stage.state-open .v74-cover-overlay,
+      .version-v74-plus .v74-production-stage.state-opening .v74-cover-overlay,
+      .version-v74-plus .v74-production-stage.state-closing .v74-cover-overlay {
+        opacity: 0 !important;
+        pointer-events: none !important;
+      }
+
+      /* Credits Marquee directly under cover */
+      .version-v74-plus .v47-marquee {
+        width: 100% !important;
+        margin-top: 6px !important;
+        overflow: hidden !important;
+      }
+
+      body.version-v74-plus .v47-marquee-content,
+      .version-v74-plus .v47-marquee-content {
+        color: rgba(245, 244, 240, 0.45) !important;
+      }
+
+      /* Production Listening Area: Identical width to cover, perfectly aligned beneath it */
+      .version-v74-plus .v74-listening-area {
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        width: 86vw !important;
+        max-width: 375px !important;
+        margin: 10px auto 0 auto !important;
+        transform: translateY(8px) !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        box-sizing: border-box !important;
+        z-index: 25 !important;
+        max-height: 0 !important;
+        overflow: hidden !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+        transition: opacity 0.4s ease, transform 0.4s ease, max-height 0.45s ease, visibility 0.4s !important;
+      }
+
+      /* Opening state: allow expansion, prepare fade */
+      .version-v74-plus .v74-production-stage.state-opening .v74-listening-area {
+        display: flex !important;
+        visibility: visible !important;
+        max-height: 380px !important;
+        opacity: 0 !important;
+        transform: translateY(8px) !important;
+        pointer-events: none !important;
+      }
+
+      /* Panel shown / Open state: full visibility, interactive, smooth entrance */
+      .version-v74-plus .v74-production-stage.is-panel-shown .v74-listening-area,
+      .version-v74-plus .v74-production-stage.is-listening .v74-listening-area,
+      .version-v74-plus .v74-production-stage.state-open .v74-listening-area {
+        display: flex !important;
+        visibility: visible !important;
+        max-height: 380px !important;
+        overflow: visible !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        transform: translateY(0) !important;
+        transition: opacity 0.45s cubic-bezier(0.4, 0, 0.2, 1), transform 0.45s cubic-bezier(0.4, 0, 0.2, 1), max-height 0.45s ease !important;
+      }
+
+      /* Closing state: smooth fade-out */
+      .version-v74-plus .v74-production-stage.state-closing .v74-listening-area {
+        display: flex !important;
+        visibility: visible !important;
+        max-height: 380px !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        transform: translateY(6px) !important;
+        transition: opacity 0.45s cubic-bezier(0.45, 0, 0.55, 1), transform 0.45s cubic-bezier(0.45, 0, 0.55, 1) !important;
+      }
+
+      /* Tracklist */
+      .version-v74-plus .v74-tracklist {
+        width: 100% !important;
+        margin-bottom: 8px !important;
+      }
+
+      .version-v74-plus .v74-ep-tracklist {
+        width: 100% !important;
+        max-height: 80px !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+      }
+
+      .version-v74-plus .v74-ep-track-number,
+      .version-v74-plus .v74-ep-track-name {
+        color: #FFFFFF !important;
+      }
+
+      /* Spotify Player: Aligns visually with the cover */
+      .version-v74-plus .v74-spotify {
+        width: 100% !important;
+        height: 80px !important;
+        min-height: 80px !important;
+        margin-bottom: 8px !important;
+        border-radius: 8px !important;
+        overflow: hidden !important;
+        background: transparent !important;
+        display: block !important;
+      }
+
+      .version-v74-plus .v74-spotify iframe {
+        width: 100% !important;
+        height: 80px !important;
+        min-height: 80px !important;
+        border-radius: 8px !important;
+        border: none !important;
+        display: block !important;
+      }
+
+      /* CLOSE Button */
+      .version-v74-plus .v74-close-container {
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        margin-top: 6px !important;
+        margin-bottom: 4px !important;
+      }
+
+      .version-v74-plus .v74-close-btn {
+        min-height: 40px !important;
+        min-width: 100px !important;
+        font-family: 'Plus Jakarta Sans', -apple-system, sans-serif !important;
+        font-size: 11px !important;
+        letter-spacing: 0.16em !important;
+        text-transform: uppercase !important;
+        color: rgba(245, 244, 240, 0.75) !important;
+        background: transparent !important;
+        border: 1px solid rgba(255, 255, 255, 0.22) !important;
+        border-radius: 20px !important;
+        padding: 6px 24px !important;
+        cursor: pointer !important;
+        touch-action: manipulation !important;
+      }
+
+      .version-v74-plus .v74-close-btn:active {
+        background: rgba(255, 255, 255, 0.1) !important;
+        color: #FFFFFF !important;
+      }
+
+      /* --------------------------------------------------
+         4. SOUND TO IMAGE — MOBILE
+         -------------------------------------------------- */
+      .version-v149-plus #soundToImage,
+      #soundToImage:has(.sti-v149-stage) {
+        position: fixed !important;
+        inset: 0 !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100vw !important;
+        height: 100dvh !important;
+        min-height: 100dvh !important;
+        max-height: 100dvh !important;
+        margin-top: 0 !important;
+        background-color: #111110 !important;
+        overflow: hidden !important;
+        touch-action: pan-y;
+      }
+
+      #soundToImage .sti-v149-stage {
+        position: absolute !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+      }
+
+      #soundToImage .sti-v149-project {
+        position: absolute !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: calc(var(--header-height) + 10px) 16px calc(64px + env(safe-area-inset-bottom, 0px)) 16px !important;
+        box-sizing: border-box !important;
+      }
+
+      #soundToImage .sti-v149-composition {
+        gap: 16px !important;
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+      }
+
+      #soundToImage .sti-v148-media-box {
+        max-width: calc(100vw - 32px) !important;
+        max-height: 48vh !important;
+        width: auto !important;
+        height: auto !important;
+        position: relative !important;
+      }
+
+      #soundToImage .sti-v148-img,
+      #soundToImage .sti-v148-video {
+        max-width: calc(100vw - 32px) !important;
+        max-height: 48vh !important;
+        width: auto !important;
+        height: auto !important;
+        object-fit: contain !important;
+      }
+
+      /* Scrubber Touch Area Enlargement (Thumb-accessible min 40px hit target) */
+      #soundToImage .sti-v162-progress-hit {
+        height: 40px !important;
+        bottom: -10px !important;
+        align-items: flex-end !important;
+        padding-bottom: 8px !important;
+        box-sizing: border-box !important;
+        touch-action: none !important;
+      }
+
+      #soundToImage .sti-v162-progress-track {
+        height: 1.5px !important;
+      }
+
+      #soundToImage .sti-v162-progress-hit:hover .sti-v162-progress-track,
+      #soundToImage .sti-v162-progress-hit.is-scrubbing .sti-v162-progress-track {
+        height: 2.5px !important;
+      }
+
+      #soundToImage .sti-v148-info {
+        text-align: center !important;
+        gap: 4px !important;
+        width: 100% !important;
+        max-width: calc(100vw - 32px) !important;
+        margin-top: 0 !important;
+      }
+
+      #soundToImage .sti-v148-title {
+        font-size: 14.5px !important;
+        line-height: 1.3 !important;
+        max-width: 100% !important;
+      }
+
+      #soundToImage .sti-v148-director,
+      #soundToImage .sti-v148-production {
+        font-size: 9.5px !important;
+        letter-spacing: 0.08em !important;
+        line-height: 1.35 !important;
+      }
+
+      #soundToImage .sti-v148-external {
+        font-size: 9px !important;
+        margin-top: 4px !important;
+      }
+
+      #soundToImage .sti-v149-counter {
+        bottom: calc(20px + env(safe-area-inset-bottom, 0px)) !important;
+        left: 20px !important;
+        font-size: 11px !important;
+      }
+
+      #soundToImage .sti-v149-dots {
+        bottom: calc(20px + env(safe-area-inset-bottom, 0px)) !important;
+        right: 20px !important;
+      }
+
+      /* V201: SOUND TO IMAGE, harmonized with the Homepage.
+         - The media no longer moves from one project to the next: only the media
+           sits in the centered flow (same vertical band as the Homepage media);
+           the info block hangs under it (absolute), so a longer or shorter text
+           no longer shifts the media up/down.
+         - Info: left-aligned on the media edge, same hierarchy as the Homepage
+           caption (white title, small muted caps, then the Canal+ link).
+         - Counter moved to the header (top right, like Home and Production),
+           dots centered at the bottom (like Home). */
+      #soundToImage .sti-v149-project {
+        justify-content: center !important;
+        padding: calc(var(--header-height) + 10px) 16px calc(80px + env(safe-area-inset-bottom, 0px)) 16px !important;
+      }
+      #soundToImage .sti-v149-composition {
+        position: relative !important;
+        gap: 0 !important;
+        align-items: stretch !important;
+      }
+      #soundToImage .sti-v148-media {
+        display: flex !important;
+        justify-content: center !important;
+      }
+      #soundToImage .sti-v148-info {
+        position: absolute !important;
+        top: calc(100% + 14px) !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: auto !important;
+        max-width: none !important;
+        margin: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        text-align: left !important;
+        gap: 3px !important;
+      }
+      #soundToImage .sti-v148-title {
+        font-size: 13.5px !important;
+        line-height: 1.25 !important;
+        letter-spacing: -0.01em !important;
+        font-weight: 500 !important;
+        color: #FFFFFF !important;
+        text-align: left !important;
+      }
+      #soundToImage .sti-v148-credit {
+        font-size: 9px !important;
+        line-height: 1.2 !important;
+        letter-spacing: 0.08em !important;
+        color: rgba(245, 244, 240, 0.5) !important;
+        text-align: left !important;
+      }
+      #soundToImage .sti-v148-details {
+        margin-top: 12px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 2px !important;
+        text-align: left !important;
+      }
+      #soundToImage .sti-v148-context,
+      #soundToImage .sti-v148-meta {
+        font-size: 9px !important;
+        line-height: 1.45 !important;
+        letter-spacing: 0.08em !important;
+        color: rgba(245, 244, 240, 0.38) !important;
+        text-align: left !important;
+      }
+      #soundToImage .sti-v148-action {
+        margin-top: 12px !important;
+      }
+      #soundToImage .sti-v148-link {
+        font-size: 9px !important;
+        letter-spacing: 0.1em !important;
+      }
+      #soundToImage .sti-v149-counter {
+        position: fixed !important;
+        top: calc(env(safe-area-inset-top, 0px) + 28px) !important;
+        right: 66px !important;
+        left: auto !important;
+        bottom: auto !important;
+        transform: translateY(-50%) !important;
+        font-family: "Plus Jakarta Sans", -apple-system, sans-serif !important;
+        font-size: 11px !important;
+        letter-spacing: 0.14em !important;
+        color: rgb(245, 244, 240) !important;
+        z-index: 1001 !important;
+        pointer-events: none !important;
+      }
+      #soundToImage .sti-v149-dots {
+        position: fixed !important;
+        left: 50% !important;
+        right: auto !important;
+        transform: translateX(-50%) !important;
+        bottom: calc(28px + env(safe-area-inset-bottom, 0px)) !important;
+        gap: 6px !important;
+      }
+      #soundToImage .sti-v149-dot {
+        width: 5px !important;
+        height: 5px !important;
+        min-width: 5px !important;
+        min-height: 5px !important;
+      }
+
+      /* V202: VIDEO PROGRESS BAR (scrubber) VISIBLE AGAIN ON MOBILE.
+         The mobile hit area was pushed 10px below the video (bottom: -10px), so
+         the bar sat just outside the media box, whose overflow is hidden: it was
+         clipped (invisible), and a touch just under the video started a project
+         swipe instead of seeking. The bar now lies on the bottom edge INSIDE the
+         video, with a 32px touch zone; it thickens while scrubbing and shows a
+         small round handle at the playhead (YouTube-like). Visible as soon as the
+         video has started (PLAYING / PAUSED), hidden while IDLE, as before. */
+      #soundToImage .sti-v162-progress-hit {
+        bottom: 0 !important;
+        height: 32px !important;
+        padding-bottom: 0 !important;
+        align-items: flex-end !important;
+      }
+      #soundToImage .sti-v162-progress-track {
+        height: 2px !important;
+        background: rgba(255, 255, 255, 0.3) !important;
+        overflow: visible !important;
+        transition: height 0.15s ease, background-color 0.15s ease, transform 0.15s ease !important;
+      }
+      #soundToImage .sti-v162-progress-hit:hover .sti-v162-progress-track,
+      #soundToImage .sti-v162-progress-hit.is-scrubbing .sti-v162-progress-track {
+        height: 4px !important;
+        background: rgba(255, 255, 255, 0.4) !important;
+        transform: translateY(-6px) !important;   /* lift so the handle is not clipped */
+      }
+      #soundToImage .sti-v162-progress-fill {
+        position: relative !important;
+        background: #FFFFFF !important;
+      }
+      #soundToImage .sti-v162-progress-fill::after {
+        content: "";
+        position: absolute;
+        right: -6px;
+        top: 50%;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #FFFFFF;
+        transform: translateY(-50%) scale(0);
+        transition: transform 0.15s ease;
+        pointer-events: none;
+      }
+      #soundToImage .sti-v162-progress-hit.is-scrubbing .sti-v162-progress-fill::after {
+        transform: translateY(-50%) scale(1);
+      }
+
+      /* V201: no rubber-band / overscroll stretch on mobile. Dragging a finger on
+         a full-screen tab made the browser stretch (Chrome) or bounce (Safari) the
+         page a few pixels before the swipe fired, then spring back: the small
+         "down then up" motion. The swipes are handled in JS, so the Homepage and
+         Sound to Image no longer let the browser pan at all (Production keeps
+         pan-y for the EP tracklist scroll). */
+      html, body {
+        overscroll-behavior: none !important;
+      }
+      #home.tab-section,
+      .version-v149-plus #soundToImage,
+      #soundToImage:has(.sti-v149-stage) {
+        touch-action: none !important;
+        overscroll-behavior: none !important;
+      }
+
+      /* --------------------------------------------------
+         5. ABOUT — MOBILE
+         -------------------------------------------------- */
+      #about.tab-section {
+        position: fixed !important;
+        inset: 0 !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100vw !important;
+        height: 100dvh !important;
+        min-height: 100dvh !important;
+        max-height: 100dvh !important;
+        margin: 0 !important;
+        padding: calc(var(--header-height) + 16px) 20px calc(40px + env(safe-area-inset-bottom, 0px)) 20px !important;
+        background-color: #111110 !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        display: none !important;
+        box-sizing: border-box !important;
+      }
+
+      #about.tab-section.active {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+      }
+
+      .about-v160-stage {
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        padding: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        overflow: visible !important;
+      }
+
+      body.version-v185-plus .about-v160-copy,
+      body.version-v185-plus .about-v183-copy,
+      body.version-v185-plus .about-v184-copy,
+      body.version-v185-plus .about-v185-copy {
+        position: relative !important;
+        width: 100% !important;
+        max-width: min(390px, 88vw) !important;
+        margin: 0 auto !important;
+        display: block !important;
+        text-align: left !important;
+      }
+
+      body.version-v185-plus .about-v174-block,
+      body.version-v185-plus .about-v178-block,
+      body.version-v185-plus .about-v179-block,
+      body.version-v185-plus .about-v180-block,
+      body.version-v185-plus .about-v183-block,
+      body.version-v185-plus .about-v184-block,
+      body.version-v185-plus .about-v185-block {
+        font-size: clamp(16px, 4.3vw, 18px) !important;
+        line-height: 1.48 !important;
+        letter-spacing: -0.012em !important;
+        text-align: left !important;
+      }
+
+      /* --------------------------------------------------
+         6. CONTACT — MOBILE
+         -------------------------------------------------- */
+      #contact.tab-section.active {
+        width: 100vw !important;
+        height: 100dvh !important;
+        padding: 0 20px !important;
+        background-color: #111110 !important;
+      }
+
+      .contact-center-content {
+        gap: 3.5rem !important;
+      }
+
+      .contact-icon-link {
+        width: 56px !important;
+        height: 56px !important;
+        min-width: 44px !important;
+        min-height: 44px !important;
+        opacity: 0.7 !important;
+      }
+
+      .contact-bottom-text {
+        bottom: calc(24px + env(safe-area-inset-bottom, 0px)) !important;
+        width: 86vw !important;
+        max-width: 320px !important;
+        font-size: 8px !important;
+        line-height: 1.6 !important;
+        letter-spacing: 0.12em !important;
+        opacity: 0.42 !important;
+      }
+    }
+
+    /* Landscape / short-height screen safeguards */
+    @media (max-width: 767px) and (max-height: 540px) {
+      #about.tab-section.active {
+        justify-content: flex-start !important;
+        padding-top: calc(var(--header-height) + 10px) !important;
+        padding-bottom: 30px !important;
+      }
+      body.version-v185-plus .about-v185-block {
+        font-size: 15px !important;
+        line-height: 1.4 !important;
+      }
+      .version-v129-plus .slide-media,
+      .version-v129-plus .slide-video-media {
+        max-height: 46vh !important;
+      }
+      #soundToImage .sti-v148-media-box {
+        max-height: 42vh !important;
+      }
+      /* V198: ONE cover size for every state. Before, the closed state used
+         max 375px while open/opening/closing used min(86vw, 42vh): on any screen
+         shorter than ~890px (Safari with its bars, small phones) the cover jumped
+         in size at each LISTEN / CLOSE. Now a single variable drives the cover,
+         the player width and the vertical centering formulas. This block only
+         applies to very short screens (max-height: 540px, e.g. landscape or a
+         small desktop window): the size is capped by height there. */
+      #production {
+        --prod-cover-size: min(86vw, 375px, 42vh);
+      }
+      #production .v74-production-stage .v74-main-composition,
+      #production .v74-production-stage .v74-listening-area {
+        max-width: var(--prod-cover-size) !important;
+      }
+    }
+
+    /* V207: CINEMA MODE for a phone held sideways (landscape, < 500px tall).
+       Homepage and Sound to Image: the media fills the whole screen on black, like a
+       video app; header, caption, counter and dots are hidden. Turning the phone
+       back upright restores everything. Production / About / Contact keep the
+       vertical mobile layout (scrollable). Safari cannot be forced into native
+       fullscreen on rotation, but it minimizes its own bars in landscape. */
+    @media (hover: none) and (pointer: coarse) and (max-height: 500px) and (orientation: landscape) {
+      /* --- Homepage --- */
+      html body.home-active header,
+      html body.home-active .project-counter,
+      html body.home-active #home .slide-caption-wrapper,
+      html body.home-active #home .home-dots-wrapper {
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+      }
+      html body.home-active,
+      html body.home-active .home-slideshow-container {
+        background: #000 !important;
+      }
+      html body.home-active .slideshow-viewport .slide .slide-inner {
+        padding: 0 !important;
+      }
+      html body.home-active .slideshow-viewport .slide .slide-media,
+      html body.home-active .slideshow-viewport .slide .slide-video-media {
+        width: 100vw !important;
+        height: 100dvh !important;
+        max-width: 100vw !important;
+        max-height: 100dvh !important;
+        aspect-ratio: auto !important;
+        object-fit: contain !important;
+        border-radius: 0 !important;
+        background: #000 !important;
+      }
+
+      /* --- Sound to Image --- */
+      html body.soundToImage-active header,
+      html body.soundToImage-active #soundToImage .sti-v148-info,
+      html body.soundToImage-active #soundToImage .sti-v149-counter,
+      html body.soundToImage-active #soundToImage .sti-v149-dots {
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+      }
+      html body.soundToImage-active #soundToImage .sti-v148-media-box {
+        position: fixed !important;
+        inset: 0 !important;
+        width: 100vw !important;
+        height: 100dvh !important;
+        max-width: none !important;
+        max-height: none !important;
+        z-index: 900 !important;
+        background: #000 !important;
+        border-radius: 0 !important;
+      }
+      html body.soundToImage-active #soundToImage .sti-v148-img,
+      html body.soundToImage-active #soundToImage .sti-v148-video {
+        width: 100% !important;
+        height: 100% !important;
+        max-width: none !important;
+        max-height: none !important;
+        object-fit: contain !important;
+        border-radius: 0 !important;
+      }
+
+      /* --- Production (V208) ---
+         On arrival, title + cover + credits fit the visible area under the header
+         (no scroll needed): the cover is sized from the screen height and the
+         block is centered. It stays in place when the player opens: the page then
+         scrolls down by itself to the player (gesture script), and back up on CLOSE. */
+      html body #production {
+        --prod-cover-size: min(86vw, 375px, calc(100dvh - var(--header-height) - 103px));
+      }
+      html body #production .v74-production-stage .v74-main-composition,
+      html body #production .v74-production-stage.v195-swipe-close .v74-main-composition {
+        margin-top: calc((100dvh - var(--header-height) - var(--prod-cover-size) - 75px) / 2 - var(--header-height) - 8px) !important;
+        max-width: var(--prod-cover-size) !important;
+      }
+      html body #production .v74-production-stage .v74-listening-area {
+        max-width: min(86vw, 375px) !important;
+      }
+    }
+  </style>
+</head>
+<body class="home-active theme-dark-interface"> <!-- Toggle home-active class to hide footer dynamically, default to dark interface -->
+
+  <!-- Layer 0: Fullscreen Slideshow Background Media (visible on Home & Sound to Image tabs) -->
+  <div class="home-slideshow-container" id="homeSlideshow">
+    <div class="slideshow-viewport" id="slideshowViewport">
+      <!-- Dynamically populated by JS -->
+    </div>
+  </div>
+
+  <!-- Custom mouse-follow cursor label (Text only, top-right of cursor) -->
+  <div class="custom-cursor-label" id="customCursor">NEXT</div>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <a class="logo" data-tab-target="home" id="logoLink">
+        Rayan Made It
+      </a>
+      
+      <!-- Navigation Links -->
+      <nav id="navMenu" class="nav-links-wrapper">
+        <ul class="nav-links">
+          <li class="nav-item">
+            <button class="nav-link" data-tab-target="production" id="navTabProduction">Production</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link" data-tab-target="soundToImage" id="navTabSoundToImage">Sound to Image</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link" data-tab-target="about" id="navTabAbout">About</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link" data-tab-target="contact" id="navTabContact">Contact</button>
+          </li>
+        </ul>
+      </nav>
+      
+      <!-- Project dynamic counter (Hidden on contact, active in header structure) -->
+      <div class="project-counter" id="projectCounter">01 / 08</div>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Open Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content Layer -->
+  <main>
+    
+    <!-- Home Overlay Section (Transparent interactive overlay on Layer 1) -->
+    <section class="tab-section active" id="home">
+      <div class="container home-section" id="homeSection">
+        <!-- Caption overlay positioned bottom left (V129 Homepage Editorial Credits + Position + Immersive Cursor) -->
+        <div class="slide-caption-wrapper" id="slideCaptionWrapper">
+          <h3 class="slide-title" id="slideshowTitle">THE DREAM I NEVER HAD — MORAN MORADI</h3>
+          <span class="slide-type" id="slideshowType">MUSIC & SOUND DESIGN BY RAYAN MADE IT</span>
+        </div>
+      </div>
+
+      <!-- Bottom Navigation Dots (V129 Video Homepage) -->
+      <div class="home-dots-wrapper" id="homeDots">
+        <div class="home-dots-track" id="homeDotsTrack">
+          <!-- Dynamically populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Production Section -->
+    <section class="tab-section" id="production">
+      <div class="container">
+
+        <!-- V23/V29 Editorial Project View Container -->
+        <div class="production-editorial-view" id="productionEditorialView">
+          <!-- Dynamically populated by JS -->
+        </div>
+
+        <!-- Interactive Stack Layout (Bypassed in V23+) -->
+        <div class="portfolio-stack-layout">
+          <!-- Centralised Column Layout -->
+          <div class="stack-visual-column">
+            <div class="stack-container" id="productionStack">
+              <!-- Dynamically populated cards by JS -->
+            </div>
+            <!-- Spotify Player below cover -->
+            <div class="stack-player-wrapper-under" id="productionLeftPlayer">
+              <!-- Dynamic player loaded by JS -->
+            </div>
+            <!-- Project metadata & Role (Nested under player for clean V9 grid alignment) -->
+            <div class="stack-info-column" id="productionInfo">
+              <!-- Dynamically populated metadata, Tracklist, Credits by JS -->
+            </div>
+            <!-- Editorial Navigation -->
+            <div class="stack-nav-editorial">
+              <button class="nav-editorial-link prev-link" id="productionPrevBtn">← PREVIOUS</button>
+              <button class="nav-editorial-link next-link" id="productionNextBtn">NEXT →</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    </section>
+
+    <!-- Sound to Image Section (V151 Interaction Layer Phase 1) -->
+    <section class="tab-section" id="soundToImage">
+      <div class="sti-v149-stage sti-v151-stage" id="stiStage">
+        <!-- Persistent Project Content Container -->
+        <div class="sti-v151-project-container" id="stiProjectContainer">
+          <!-- Dynamically populated by renderStiProjectV151() in script.js -->
+        </div>
+
+        <!-- Persistent Stage Overlays (Outside project fade layer) -->
+        <div class="sti-v149-counter sti-v151-counter" id="stiCounter">01 / 02</div>
+
+        <div class="sti-v149-dots sti-v151-dots" id="stiDots">
+          <!-- Populated by initStiV151() in script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section (V185 Refined Final Reveal Rhythm) -->
+    <section class="tab-section" id="about">
+      <div class="about-v160-stage about-v174-stage about-v178-stage about-v179-stage about-v180-stage about-v183-stage about-v184-stage about-v185-stage">
+        <div class="about-v160-copy about-v174-cover about-v178-cover about-v179-cover about-v180-cover about-v183-copy about-v184-copy about-v185-copy">
+          <p class="about-v174-block about-v178-block about-v179-block about-v180-block about-v183-block about-v184-block about-v185-block">
+            <span class="about-v160-p01 about-v174-opening about-v178-opening about-v179-opening about-v180-opening about-v183-opening about-v184-opening about-v185-opening"><span class="about-fragment" style="--f-delay: 610ms;">I’m a</span> <span class="about-fragment" style="--f-delay: 0ms;">Paris-based</span> <span class="about-fragment" style="--f-delay: 720ms;">composer and sound artist.</span></span> <span class="about-v160-p02 about-v174-body about-v178-body about-v179-body about-v180-body about-v183-body about-v184-body about-v185-body"><span class="about-fragment" style="--f-delay: 1050ms;">After ten years</span> <span class="about-fragment" style="--f-delay: 300ms;">of making music,</span> <span class="about-fragment" style="--f-delay: 840ms;">my approach</span> <span class="about-fragment" style="--f-delay: 1250ms;">has become increasingly</span> <span class="about-fragment" style="--f-delay: 110ms;">instinctive and reductive:</span> <span class="about-fragment" style="--f-delay: 1430ms;">looking for</span> <span class="about-fragment" style="--f-delay: 500ms;">the simplest way</span> <span class="about-fragment" style="--f-delay: 1000ms;">to express what matters.</span></span> <span class="about-v160-p03 about-v174-body about-v178-body about-v179-body about-v180-body about-v183-body about-v184-body about-v185-body"><span class="about-fragment" style="--f-delay: 1100ms;">Whether working</span> <span class="about-fragment" style="--f-delay: 560ms;">from an image,</span> <span class="about-fragment" style="--f-delay: 1340ms;">a story</span> <span class="about-fragment" style="--f-delay: 900ms;">or an artist,</span> <span class="about-fragment" style="--f-delay: 1170ms;">the process begins by</span> <span class="about-emphasis-singular about-fragment" style="--f-delay: 350ms;">looking for what makes it singular</span><span class="about-fragment" style="--f-delay: 780ms;">: its tension,</span> <span class="about-fragment" style="--f-delay: 160ms;">emotion, rhythm,</span> <span class="about-fragment" style="--f-delay: 1530ms;">or sometimes</span> <span class="about-fragment" style="--f-delay: 670ms;">something harder to name.</span> <span class="about-fragment" style="--f-delay: 950ms;">Music becomes</span> <span class="about-fragment" style="--f-delay: 50ms;">a way of revealing</span> <span class="about-fragment" style="--f-delay: 440ms;">what is already there,</span> <span class="about-fragment" style="--f-delay: 1630ms;">rather than adding</span> <span class="about-fragment" style="--f-delay: 1730ms;">another layer to it.</span></span> <span class="about-v160-p04 about-v174-closing about-v178-closing about-v179-closing about-v180-closing about-v183-closing about-v184-closing about-v185-closing"><span class="about-fragment" style="--f-delay: 1820ms;">Every project</span> <span class="about-fragment" style="--f-delay: 220ms;">has its own language.</span> <span class="about-fragment" style="--f-delay: 1900ms;">The work</span> <span class="about-fragment" style="--f-delay: 1970ms;">is to find it.</span></span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fullscreen Dark Contact Section -->
+    <section class="tab-section" id="contact">
+      <!-- Centered SVG Icons -->
+      <div class="contact-center-content">
+        <!-- Email Icon Link -->
+        <a href="mailto:rayanmadeit@gmail.com" class="contact-icon-link" aria-label="Send Email">
+          <svg viewBox="0 0 100 100" class="contact-svg-icon">
+            <rect x="10" y="20" width="80" height="60" rx="16" fill="currentColor" />
+            <path d="M15 28 L50 56 L85 28" fill="none" stroke="#111110" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </a>
+        
+        <!-- Instagram Icon Link -->
+        <a href="https://www.instagram.com/rayanmade_it/" target="_blank" class="contact-icon-link" aria-label="Visit Instagram">
+          <svg viewBox="0 0 100 100" class="contact-svg-icon">
+            <rect x="12" y="12" width="76" height="76" rx="22" fill="none" stroke="currentColor" stroke-width="7" />
+            <circle cx="50" cy="50" r="18" fill="none" stroke="currentColor" stroke-width="7" />
+            <circle cx="68" cy="32" r="5.5" fill="currentColor" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Muted Bottom Services Banner -->
+      <div class="contact-bottom-text">
+        ORIGINAL MUSIC, SOUND DESIGN, FILM SCORING, VISUAL PROJECTS, DOCUMENTARIES, SHORT FILMS, LIVE EXPERIENCES
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Project Details Modal (Layer 2 overlay) -->
+  <div class="project-modal" id="projectModal" aria-hidden="true">
+    <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close Project">Close</button>
+    <div class="modal-content" id="modalContent">
+      <!-- Dynamically filled by JS -->
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-container">
+      <div class="footer-copy">
+        © 2026 <span>RAYAN MADE IT.</span> All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- RAYAN MADE IT — V208 Smartphone Touch & Gesture Engine -->
+  <script>
+    (function() {
+      'use strict';
+
+      /* V200: LIGHT MEDIA ON MOBILE. script.js points to the full-quality files
+         (video/web: 1.5 GB of 1080p/4K; miniatures: 55 MB of PNG). On phones
+         (mobile layout at load, portrait or landscape) these paths are rewritten on the fly to the
+         lightweight copies (video/mobile: 720p H.264, original audio, fast start;
+         miniatures/mobile: JPG). Desktop keeps the originals. script.js untouched.
+         Hooks: innerHTML / insertAdjacentHTML (slides are built from HTML strings),
+         plus src / setAttribute on images and videos. Must run before script.js
+         (deferred), which is the case for this inline script. */
+      (function installMobileMediaV200() {
+        if (!window.matchMedia('(max-width: 767px), (hover: none) and (pointer: coarse) and (max-height: 500px)').matches) return;
+        const VIDEOS = 'sean_tfkpourlafindumonde|moran_the_dream_i_never_had|paul_parkchanwook|sean_zeudog_is_back_mouah|sidi_bloque_dans_tristesse|sidi_casse|sidi_go_crazy|sidi_nefs|sidi_seul|velib_bleu';
+        const MINIS = 'moran_the_dream_i_never_had|sean_zeudog_is_back_mouah|sidi_bloque_dans_tristesse|sidi_casse|sidi_go_crazy|sidi_nefs|sidi_seul';
+        const reVideo = new RegExp('video/web/(' + VIDEOS + ')\\.mp4', 'g');
+        const reMini = new RegExp('miniatures/(' + MINIS + ')\\.png', 'g');
+        const rewrite = v => (typeof v === 'string' && (v.indexOf('video/web/') !== -1 || v.indexOf('miniatures/') !== -1))
+          ? v.replace(reVideo, 'video/mobile/$1.mp4').replace(reMini, 'miniatures/mobile/$1.jpg') : v;
+        window.__rmiMobileMediaRewrite = rewrite;
+
+        const wrapSetter = (proto, prop) => {
+          const d = Object.getOwnPropertyDescriptor(proto, prop);
+          if (!d || !d.set) return;
+          Object.defineProperty(proto, prop, Object.assign({}, d, { set(v) { return d.set.call(this, rewrite(v)); } }));
+        };
+        wrapSetter(Element.prototype, 'innerHTML');
+        wrapSetter(Element.prototype, 'outerHTML');
+        wrapSetter(HTMLImageElement.prototype, 'src');
+        wrapSetter(HTMLMediaElement.prototype, 'src');
+        wrapSetter(HTMLVideoElement.prototype, 'poster');
+        wrapSetter(HTMLSourceElement.prototype, 'src');
+
+        const origInsert = Element.prototype.insertAdjacentHTML;
+        Element.prototype.insertAdjacentHTML = function(pos, html) { return origInsert.call(this, pos, rewrite(html)); };
+        const origSetAttr = Element.prototype.setAttribute;
+        Element.prototype.setAttribute = function(name, value) {
+          return origSetAttr.call(this, name, /^(src|poster|data-video-src|href)$/i.test(name) ? rewrite(value) : value);
+        };
+      })();
+
+      let touchStartX = 0;
+      let touchStartY = 0;
+      let touchStartTime = 0;
+      let touchTarget = null;
+
+      const HORIZONTAL_SWIPE_MIN_PX = 36;
+      const HORIZONTAL_RATIO = 1.25;
+
+      /* V196: REACTIVE SWIPE ON PRODUCTION (mobile). The project change fires
+         DURING the finger movement (touchmove) as soon as it travels ~24px,
+         instead of waiting for the finger to lift. Vertical swipes now work too,
+         matching the vertical rail: up = next, down = previous (left/right kept).
+         A vertical swipe first scrolls the slot when it can still scroll (EP
+         tracklists with the player open) and only changes project at the edge. */
+      const MOVE_TRIGGER_PX = 24;
+      let swipeFiredDuringMove = false;
+      let slotScrollTopAtStart = 0;
+
+      function onTouchMoveProductionV196(e) {
+        if (swipeFiredDuringMove || !e.touches || e.touches.length !== 1) return;
+        if (!window.matchMedia('(max-width: 767px), (hover: none) and (pointer: coarse) and (max-height: 500px)').matches) return;
+
+        // V199: HOMEPAGE gets the same reactive swipe, vertical AND horizontal
+        // (up/left = next, down/right = previous), fired during the movement.
+        const isHome = document.body.classList.contains('home-active') || document.getElementById('home')?.classList.contains('active');
+        if (isHome) {
+          if (touchTarget && touchTarget.closest('header, nav, .menu-toggle, #menuToggle, .nav-links-wrapper, #projectModal, .home-play-overlay-btn, .home-pause-overlay-btn, .home-dot, .home-dots-wrapper')) return;
+          if (document.getElementById('navMenu')?.classList.contains('mobile-active')) return;
+          const hdx = touchStartX - e.touches[0].clientX;
+          const hdy = touchStartY - e.touches[0].clientY;
+          const hx = Math.abs(hdx), hy = Math.abs(hdy);
+          let hdir = 0;
+          if (hx >= MOVE_TRIGGER_PX && hx > hy * HORIZONTAL_RATIO) hdir = hdx > 0 ? 1 : -1;
+          else if (hy >= MOVE_TRIGGER_PX && hy > hx * HORIZONTAL_RATIO) hdir = hdy > 0 ? 1 : -1;
+          if (!hdir) return;
+          swipeFiredDuringMove = true;
+          handleHorizontalProjectSwipe(hdir);
+          return;
+        }
+
+        // V201: SOUND TO IMAGE gets the same reactive 4-direction swipe.
+        const stiSec = document.getElementById('soundToImage');
+        if (stiSec && stiSec.classList.contains('active')) {
+          if (touchTarget && touchTarget.closest('header, nav, .menu-toggle, #menuToggle, .nav-links-wrapper, .sti-v162-progress-hit, .sti-v148-link, .sti-v149-dots')) return;
+          if (document.getElementById('navMenu')?.classList.contains('mobile-active')) return;
+          const sdx = touchStartX - e.touches[0].clientX;
+          const sdy = touchStartY - e.touches[0].clientY;
+          const sx = Math.abs(sdx), sy = Math.abs(sdy);
+          let sdir = 0;
+          if (sx >= MOVE_TRIGGER_PX && sx > sy * HORIZONTAL_RATIO) sdir = sdx > 0 ? 1 : -1;
+          else if (sy >= MOVE_TRIGGER_PX && sy > sx * HORIZONTAL_RATIO) sdir = sdy > 0 ? 1 : -1;
+          if (!sdir) return;
+          swipeFiredDuringMove = true;
+          handleHorizontalProjectSwipe(sdir);
+          return;
+        }
+
+        const prodSection = document.getElementById('production');
+        if (!prodSection || !prodSection.classList.contains('active')) return;
+        if (touchTarget && touchTarget.closest('.menu-toggle, #menuToggle, nav, .nav-link, .nav-links-wrapper, .v74-close-btn, .v74-spotify, .v74-ep-tracklist')) return;
+        if (document.getElementById('navMenu')?.classList.contains('mobile-active')) return;
+
+        const dx = touchStartX - e.touches[0].clientX;
+        const dy = touchStartY - e.touches[0].clientY;
+        const absX = Math.abs(dx), absY = Math.abs(dy);
+
+        let direction = 0;
+        if (absX >= MOVE_TRIGGER_PX && absX > absY * HORIZONTAL_RATIO) {
+          direction = dx > 0 ? 1 : -1;
+        } else if (absY >= MOVE_TRIGGER_PX && absY > absX * HORIZONTAL_RATIO) {
+          const slot = document.getElementById('v86SlotCurrent');
+          if (slot) {
+            const maxScroll = slot.scrollHeight - slot.clientHeight;
+            const wasAtBottom = slotScrollTopAtStart >= maxScroll - 2;
+            const wasAtTop = slotScrollTopAtStart <= 2;
+            if (dy > 0 && !wasAtBottom) return;   // let the slot scroll down first
+            if (dy < 0 && !wasAtTop) return;      // let the slot scroll up first
+          }
+          direction = dy > 0 ? 1 : -1;
+        }
+        if (!direction) return;
+        swipeFiredDuringMove = true;
+        handleHorizontalProjectSwipe(direction);
+      }
+
+      function onTouchStart(e) {
+        swipeFiredDuringMove = false;
+        const slotAtStart = document.getElementById('v86SlotCurrent');
+        slotScrollTopAtStart = slotAtStart ? slotAtStart.scrollTop : 0;
+        if (!e.touches || e.touches.length === 0) return;
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+        touchStartTime = Date.now();
+        touchTarget = e.target;
+      }
+
+      function onTouchEnd(e) {
+        if (swipeFiredDuringMove) { swipeFiredDuringMove = false; return; }  // V196: already handled
+        if (!e.changedTouches || e.changedTouches.length === 0) return;
+        const endX = e.changedTouches[0].clientX;
+        const endY = e.changedTouches[0].clientY;
+        const deltaX = touchStartX - endX;
+        const deltaY = touchStartY - endY;
+        const absX = Math.abs(deltaX);
+        const absY = Math.abs(deltaY);
+
+        if (touchTarget && touchTarget.closest('.menu-toggle, #menuToggle, nav, .nav-link, .nav-links-wrapper, .sti-v162-progress-hit, .v74-close-btn, .v74-spotify, .home-play-overlay-btn, .home-pause-overlay-btn, .sti-v148-play')) {
+          return;
+        }
+
+        if (absX >= HORIZONTAL_SWIPE_MIN_PX && absX > absY * HORIZONTAL_RATIO) {
+          const direction = deltaX > 0 ? 1 : -1;
+          handleHorizontalProjectSwipe(direction);
+        }
+      }
+
+      function handleHorizontalProjectSwipe(direction) {
+        // 1. HOMEPAGE TAB
+        if (document.body.classList.contains('home-active') || document.getElementById('home')?.classList.contains('active')) {
+          const dots = document.querySelectorAll('.home-dot');
+          if (dots && dots.length > 0) {
+            const activeIdx = Array.from(dots).findIndex(d => d.classList.contains('active'));
+            const total = dots.length;
+            const nextIdx = (activeIdx + direction + total) % total;
+            if (dots[nextIdx]) {
+              dots[nextIdx].click();
+            }
+          } else {
+            window.dispatchEvent(new WheelEvent('wheel', { deltaY: direction > 0 ? 120 : -120 }));
+          }
+          return;
+        }
+
+        // 2. PRODUCTION TAB
+        const prodSection = document.getElementById('production');
+        if (prodSection && prodSection.classList.contains('active')) {
+          if (direction > 0) {
+            if (typeof window.nextProductionProject === 'function') {
+              window.nextProductionProject();
+            }
+          } else {
+            if (typeof window.previousProductionProject === 'function') {
+              window.previousProductionProject();
+            }
+          }
+          return;
+        }
+
+        // 3. SOUND TO IMAGE TAB
+        const stiSection = document.getElementById('soundToImage');
+        if (stiSection && stiSection.classList.contains('active')) {
+          const stiDots = document.querySelectorAll('.sti-v149-dot');
+          if (stiDots && stiDots.length > 0) {
+            const activeIdx = Array.from(stiDots).findIndex(d => d.classList.contains('active'));
+            const total = stiDots.length;
+            const nextIdx = (activeIdx + direction + total) % total;
+            if (typeof window.showStiProjectV151 === 'function') {
+              window.showStiProjectV151(nextIdx);
+            } else if (stiDots[nextIdx]) {
+              stiDots[nextIdx].click();
+            }
+          }
+          return;
+        }
+      }
+
+      /* V195: SWIPE WHILE PLAYER IS OPEN = TUCK-IN CLOSE + SWIPE, OVERLAPPING.
+         Every project change goes through window.goToProductionProject (script.js),
+         wrapped here on mobile only. If the current player is open/opening:
+           t=0     : the outgoing stage gets 'v195-swipe-close' -> player tucks into
+                     the cover (CSS above); the rail gets a gentler curve.
+           t=100ms : the original transition runs: V167 auto-close (audio stopped,
+                     state reset) + rail motion; the next cover arrives from below.
+         If the player is closed, the original runs immediately (V192 motion).
+         script.js is untouched; desktop keeps its own behavior. */
+      function installSwipeCloseV195() {
+        const original = window.goToProductionProject;
+        if (typeof original !== 'function') { setTimeout(installSwipeCloseV195, 50); return; }
+        if (original.__v195) return;
+        const OPEN = ['state-open', 'state-opening', 'is-listening', 'is-panel-shown'];
+        const wrapped = function() {
+          const self = this, args = arguments;
+          const section = document.getElementById('production');
+          const stage = document.querySelector('#v86SlotCurrent .v74-production-stage');
+          const isMobile = window.matchMedia('(max-width: 767px), (hover: none) and (pointer: coarse) and (max-height: 500px)').matches;
+          const isOpen = stage && OPEN.some(c => stage.classList.contains(c)) && !stage.classList.contains('state-closing');
+          if (!isMobile || !isOpen || !section) return original.apply(self, args);
+
+          // V197: keep the Spotify iframe intact while the player folds away, so it
+          // fades with the rest instead of blanking instantly (and differently on
+          // every swipe). script.js only resets iframes whose .src is truthy: the
+          // .src getter is masked for the fold, then the audio is stopped for real.
+          const iframes = Array.from(stage.querySelectorAll('.v74-spotify iframe'));
+          iframes.forEach(f => Object.defineProperty(f, 'src', { configurable: true, get() { return ''; }, set() {} }));
+          setTimeout(() => {
+            iframes.forEach(f => {
+              delete f.src;                         // back to the native src property
+              try { f.src = 'about:blank'; } catch (err) {}   // stop audio (outgoing slot is discarded anyway)
+            });
+          }, 340);
+
+          // V196: fold and rail motion start in the SAME frame (no lead delay).
+          stage.classList.add('v195-swipe-close');
+          section.classList.add('v195-rail-from-open');
+          original.apply(self, args);
+          setTimeout(() => section.classList.remove('v195-rail-from-open'), 1300);
+        };
+        wrapped.__v195 = true;
+        window.goToProductionProject = wrapped;
+      }
+      // script.js is deferred and defines goToProductionProject inside its own
+      // DOMContentLoaded handler: install right after that has run.
+      document.addEventListener('DOMContentLoaded', function() { setTimeout(installSwipeCloseV195, 0); });
+
+      /* V199: measure the active homepage media and place the caption under it. */
+      let homeCaptionRaf = 0;
+      function placeHomeCaptionV199() {
+        homeCaptionRaf = 0;
+        const caption = document.getElementById('slideCaptionWrapper');
+        const home = document.getElementById('home');
+        if (!caption || !home) return;
+        if (!window.matchMedia('(max-width: 767px), (hover: none) and (pointer: coarse) and (max-height: 500px)').matches) { caption.classList.remove('v199-placed'); return; }
+        const slide = document.querySelector('#slideshowViewport .slide.active');
+        if (!slide) return;
+        const rects = Array.from(slide.querySelectorAll('.slide-media, .slide-video-media'))
+          .map(el => el.getBoundingClientRect())
+          .filter(r => r.width > 60 && r.height > 60);
+        if (!rects.length) return;
+        rects.sort((a, b) => b.width * b.height - a.width * a.height);
+        const r = rects[0];
+        home.style.setProperty('--home-media-bottom', Math.round(r.bottom) + 'px');
+        home.style.setProperty('--home-media-left', Math.round(r.left) + 'px');
+        home.style.setProperty('--home-media-width', Math.round(r.width) + 'px');
+        caption.classList.add('v199-placed');
+      }
+      function scheduleHomeCaptionV199() {
+        if (!homeCaptionRaf) homeCaptionRaf = requestAnimationFrame(placeHomeCaptionV199);
+      }
+      document.addEventListener('DOMContentLoaded', function() {
+        const viewport = document.getElementById('slideshowViewport');
+        if (viewport) {
+          new MutationObserver(() => { scheduleHomeCaptionV199(); setTimeout(scheduleHomeCaptionV199, 120); })
+            .observe(viewport, { subtree: true, childList: true, attributes: true, attributeFilter: ['class'] });
+          viewport.addEventListener('load', scheduleHomeCaptionV199, true);            // images
+          viewport.addEventListener('loadedmetadata', scheduleHomeCaptionV199, true);  // videos
+        }
+        setTimeout(scheduleHomeCaptionV199, 0);
+        setTimeout(scheduleHomeCaptionV199, 600);
+      });
+      window.addEventListener('resize', scheduleHomeCaptionV199);
+      window.addEventListener('orientationchange', () => setTimeout(scheduleHomeCaptionV199, 300));
+
+      /* V199: a swipe already handled during the movement must not be handled
+         again on lift (script.js has its own vertical touchend on the homepage). */
+      window.addEventListener('touchend', function(e) {
+        if (swipeFiredDuringMove) { swipeFiredDuringMove = false; e.stopPropagation(); }
+      }, { capture: true, passive: true });
+
+      /* V208: PRODUCTION, PHONE IN LANDSCAPE. Opening the player (LISTEN) scrolls
+         the page down by itself to the player and its tracklist; CLOSE scrolls back
+         up to the cover. Portrait and desktop are not affected. */
+      const LANDSCAPE_PHONE_MQ = '(hover: none) and (pointer: coarse) and (max-height: 500px) and (orientation: landscape)';
+      function installLandscapeProductionScrollV208() {
+        const open = window.openListeningV74, close = window.closeListeningV74;
+        if (typeof open !== 'function' || typeof close !== 'function') { setTimeout(installLandscapeProductionScrollV208, 50); return; }
+        if (open.__v208) return;
+        const slot = () => document.getElementById('v86SlotCurrent');
+        const isLandscapePhone = () => window.matchMedia(LANDSCAPE_PHONE_MQ).matches;
+        const scrollToPlayer = () => {
+          const sl = slot(); if (!sl) return;
+          sl.scrollTo({ top: sl.scrollHeight - sl.clientHeight, behavior: 'smooth' });
+        };
+        const wrappedOpen = function() {
+          const r = open.apply(this, arguments);
+          if (isLandscapePhone()) {
+            // the player panel appears ~350ms after LISTEN, then grows: follow it
+            setTimeout(scrollToPlayer, 420);
+            setTimeout(scrollToPlayer, 900);
+          }
+          return r;
+        };
+        const wrappedClose = function() {
+          if (isLandscapePhone()) {
+            const sl = slot(); if (sl) sl.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+          return close.apply(this, arguments);
+        };
+        wrappedOpen.__v208 = true;
+        window.openListeningV74 = wrappedOpen;
+        window.closeListeningV74 = wrappedClose;
+      }
+      document.addEventListener('DOMContentLoaded', function() { setTimeout(installLandscapeProductionScrollV208, 0); });
+
+      /* V208: each new Production project starts scrolled to the top. The rail
+         reuses the same slot element, so its scroll position was kept from the
+         previous project (e.g. after LISTEN in landscape or an EP tracklist). */
+      document.addEventListener('DOMContentLoaded', function() {
+        // Observe the Production section itself (its inner view and slots are
+        // rebuilt when the tab opens), and reset the current slot whenever a new
+        // project stage is inserted.
+        const prod = document.getElementById('production');
+        if (!prod) return;
+        new MutationObserver(muts => {
+          const newStage = muts.some(m => [...m.addedNodes].some(n => n.nodeType === 1 &&
+            (n.classList.contains('v74-production-stage') || (n.querySelector && n.querySelector('.v74-production-stage')))));
+          if (!newStage) return;
+          const sl = document.getElementById('v86SlotCurrent');
+          if (sl) sl.scrollTop = 0;
+        }).observe(prod, { childList: true, subtree: true });
+      });
+
+      document.addEventListener('touchstart', onTouchStart, { passive: true });
+      document.addEventListener('touchmove', onTouchMoveProductionV196, { passive: true });
+      document.addEventListener('touchend', onTouchEnd, { passive: true });
+
+      // Dismiss mobile menu if tapped outside nav-links
+      document.addEventListener('DOMContentLoaded', function() {
+        const navMenu = document.getElementById('navMenu');
+        const menuToggle = document.getElementById('menuToggle');
+        if (navMenu && menuToggle) {
+          navMenu.addEventListener('click', function(e) {
+            if (e.target === navMenu) {
+              navMenu.classList.remove('mobile-active');
+              menuToggle.classList.remove('open');
+            }
+          });
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
