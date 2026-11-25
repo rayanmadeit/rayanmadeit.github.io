@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <!-- Published site: script.js reads the site version from this value
        (working files read it from their name, index_rayanmadeit_V###.html). -->
-  <script>window.RMI_SITE_VERSION = 208;</script>
+  <script>window.RMI_SITE_VERSION = 209;</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="description" content="Rayan Made It — Paris-based composer and sound artist. Music production and sound design for artists, films and images.">
   <title>Rayan Made It — Music Production &amp; Sound Design</title>
@@ -1169,6 +1169,72 @@
         transform: translateY(-50%) scale(1);
       }
 
+      /* V209: HEADER ALWAYS VISIBLE IN PRODUCTION. In this tab only, the shared
+         styles made the header 'sticky' and let the page scroll: on iPhone a
+         downward swipe scrolled / bounced the page and the header slid away into
+         black. On mobile the header is fixed and the page itself never scrolls
+         (only the project slot does), like in every other tab. */
+      html body.production-active {
+        overflow: hidden !important;
+      }
+      html body.production-active header {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+      }
+
+      /* V209: FULLSCREEN BUTTON (Homepage + Sound to Image videos). Appears on a
+         tap on a playing video, bottom-right of the media, then fades out. */
+      .rmi-fs-btn {
+        position: fixed;
+        z-index: 1000;
+        width: 36px;
+        height: 36px;
+        padding: 0;
+        margin: 0;
+        border: none;
+        border-radius: 4px;
+        background: rgba(17, 17, 16, 0.45);
+        color: #F5F4F0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.25s ease;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-backdrop-filter: blur(4px);
+        backdrop-filter: blur(4px);
+      }
+      .rmi-fs-btn.is-visible {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .rmi-fs-btn svg {
+        width: 18px;
+        height: 18px;
+        display: block;
+      }
+      /* Element fullscreen (Android / browsers that support it): Sound to Image
+         keeps its own progress bar, the media fills the screen on black. */
+      #soundToImage .sti-v148-media-box:fullscreen {
+        width: 100vw !important;
+        height: 100vh !important;
+        max-width: none !important;
+        max-height: none !important;
+        background: #000 !important;
+      }
+      #soundToImage .sti-v148-media-box:fullscreen .sti-v148-img,
+      #soundToImage .sti-v148-media-box:fullscreen .sti-v148-video {
+        width: 100% !important;
+        height: 100% !important;
+        max-width: none !important;
+        max-height: none !important;
+        object-fit: contain !important;
+      }
+
       /* V201: no rubber-band / overscroll stretch on mobile. Dragging a finger on
          a full-screen tab made the browser stretch (Chrome) or bounce (Safari) the
          page a few pixels before the swipe fired, then spring back: the small
@@ -1326,23 +1392,23 @@
        fullscreen on rotation, but it minimizes its own bars in landscape. */
     @media (hover: none) and (pointer: coarse) and (max-height: 500px) and (orientation: landscape) {
       /* --- Homepage --- */
-      html body.home-active header,
-      html body.home-active .project-counter,
-      html body.home-active #home .slide-caption-wrapper,
-      html body.home-active #home .home-dots-wrapper {
+      html:not(.rmi-cinema-off) body.home-active header,
+      html:not(.rmi-cinema-off) body.home-active .project-counter,
+      html:not(.rmi-cinema-off) body.home-active #home .slide-caption-wrapper,
+      html:not(.rmi-cinema-off) body.home-active #home .home-dots-wrapper {
         opacity: 0 !important;
         visibility: hidden !important;
         pointer-events: none !important;
       }
-      html body.home-active,
-      html body.home-active .home-slideshow-container {
+      html:not(.rmi-cinema-off) body.home-active,
+      html:not(.rmi-cinema-off) body.home-active .home-slideshow-container {
         background: #000 !important;
       }
-      html body.home-active .slideshow-viewport .slide .slide-inner {
+      html:not(.rmi-cinema-off) body.home-active .slideshow-viewport .slide .slide-inner {
         padding: 0 !important;
       }
-      html body.home-active .slideshow-viewport .slide .slide-media,
-      html body.home-active .slideshow-viewport .slide .slide-video-media {
+      html:not(.rmi-cinema-off) body.home-active .slideshow-viewport .slide .slide-media,
+      html:not(.rmi-cinema-off) body.home-active .slideshow-viewport .slide .slide-video-media {
         width: 100vw !important;
         height: 100dvh !important;
         max-width: 100vw !important;
@@ -1354,15 +1420,15 @@
       }
 
       /* --- Sound to Image --- */
-      html body.soundToImage-active header,
-      html body.soundToImage-active #soundToImage .sti-v148-info,
-      html body.soundToImage-active #soundToImage .sti-v149-counter,
-      html body.soundToImage-active #soundToImage .sti-v149-dots {
+      html:not(.rmi-cinema-off) body.soundToImage-active header,
+      html:not(.rmi-cinema-off) body.soundToImage-active #soundToImage .sti-v148-info,
+      html:not(.rmi-cinema-off) body.soundToImage-active #soundToImage .sti-v149-counter,
+      html:not(.rmi-cinema-off) body.soundToImage-active #soundToImage .sti-v149-dots {
         opacity: 0 !important;
         visibility: hidden !important;
         pointer-events: none !important;
       }
-      html body.soundToImage-active #soundToImage .sti-v148-media-box {
+      html:not(.rmi-cinema-off) body.soundToImage-active #soundToImage .sti-v148-media-box {
         position: fixed !important;
         inset: 0 !important;
         width: 100vw !important;
@@ -1373,8 +1439,8 @@
         background: #000 !important;
         border-radius: 0 !important;
       }
-      html body.soundToImage-active #soundToImage .sti-v148-img,
-      html body.soundToImage-active #soundToImage .sti-v148-video {
+      html:not(.rmi-cinema-off) body.soundToImage-active #soundToImage .sti-v148-img,
+      html:not(.rmi-cinema-off) body.soundToImage-active #soundToImage .sti-v148-video {
         width: 100% !important;
         height: 100% !important;
         max-width: none !important;
@@ -1583,7 +1649,7 @@
     </div>
   </footer>
 
-  <!-- RAYAN MADE IT — V208 Smartphone Touch & Gesture Engine -->
+  <!-- RAYAN MADE IT — V209 Smartphone Touch & Gesture Engine -->
   <script>
     (function() {
       'use strict';
@@ -1936,6 +2002,135 @@
           if (sl) sl.scrollTop = 0;
         }).observe(prod, { childList: true, subtree: true });
       });
+
+      /* V209: FULLSCREEN BUTTON for the Homepage and Sound to Image videos (mobile).
+         Portrait: first tap on a PLAYING video shows a small fullscreen icon
+         (bottom-right, above the progress bar in Sound to Image) instead of
+         pausing; a second tap while it is visible pauses as before. The icon opens
+         the native fullscreen player (iPhone: Apple's video player, which follows
+         the phone into landscape; other browsers: element fullscreen + landscape
+         lock when allowed). Landscape (automatic cinema mode): the same tap shows
+         a "reduce" icon that leaves cinema mode until the phone is turned upright. */
+      (function installFullscreenButtonV209() {
+        const MOBILE_MQ = '(max-width: 767px), (hover: none) and (pointer: coarse) and (max-height: 500px)';
+        const LAND_MQ = '(hover: none) and (pointer: coarse) and (max-height: 500px) and (orientation: landscape)';
+        const ICON_ENTER = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/></svg>';
+        const ICON_EXIT = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"><path d="M9 4v5H4M20 9h-5V4M15 20v-5h5M4 15h5v5"/></svg>';
+        const html = document.documentElement;
+        let btn = null, hideTimer = null;
+
+        const isMobile = () => window.matchMedia(MOBILE_MQ).matches;
+        const isLandscape = () => window.matchMedia(LAND_MQ).matches;
+        const isCinema = () => isLandscape() && !html.classList.contains('rmi-cinema-off');
+
+        function context() {
+          const body = document.body;
+          if (body.classList.contains('home-active')) {
+            const slide = document.querySelector('#slideshowViewport .slide.active');
+            if (!slide) return null;
+            const vid = slide.querySelector('.slide-video-media');
+            const vidShown = vid && vid.getBoundingClientRect().width > 60;
+            return { kind: 'home', vid, box: vidShown ? vid : slide.querySelector('.slide-media') };
+          }
+          if (body.classList.contains('soundToImage-active')) {
+            const pr = document.querySelector('#stiProjectContainer .sti-v151-project');
+            if (!pr) return null;
+            return { kind: 'sti', vid: pr.querySelector('.sti-v148-video'), box: pr.querySelector('.sti-v148-media-box') };
+          }
+          return null;
+        }
+        const isPlaying = c => !!(c && c.vid && !c.vid.paused && !c.vid.ended);
+
+        function hide() {
+          if (!btn) return;
+          btn.classList.remove('is-visible');
+          clearTimeout(hideTimer);
+        }
+        function show(c) {
+          if (!btn || !c || !c.box) return;
+          const r = c.box.getBoundingClientRect();
+          const inset = 10, size = 36;
+          const lift = c.kind === 'sti' ? 34 : 0;          // stay above the progress bar
+          btn.innerHTML = isCinema() ? ICON_EXIT : ICON_ENTER;
+          btn.setAttribute('aria-label', isCinema() ? 'Exit full screen' : 'Full screen');
+          btn.style.left = Math.round(Math.min(r.right, window.innerWidth) - size - inset) + 'px';
+          btn.style.top = Math.round(Math.min(r.bottom, window.innerHeight) - size - inset - lift) + 'px';
+          btn.classList.add('is-visible');
+          clearTimeout(hideTimer);
+          hideTimer = setTimeout(hide, 3000);
+        }
+
+        function enterFullscreen(c) {
+          const v = c.vid;
+          hide();
+          const target = c.kind === 'sti' ? c.box : v;
+          const canElementFs = document.fullscreenEnabled || document.webkitFullscreenEnabled;
+          if (canElementFs && target && (target.requestFullscreen || target.webkitRequestFullscreen)) {
+            const req = target.requestFullscreen || target.webkitRequestFullscreen;
+            Promise.resolve(req.call(target)).then(() => {
+              try { if (screen.orientation && screen.orientation.lock) screen.orientation.lock('landscape').catch(() => {}); } catch (err) {}
+            }).catch(() => {
+              if (v && v.webkitEnterFullscreen) { try { v.webkitEnterFullscreen(); } catch (err) {} }
+            });
+            return;
+          }
+          // iPhone: Apple's native fullscreen video player
+          if (v && typeof v.webkitEnterFullscreen === 'function') {
+            try { v.webkitEnterFullscreen(); } catch (err) {}
+          }
+        }
+
+        function onButton(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          const c = context();
+          if (!c) return;
+          if (isCinema()) { html.classList.add('rmi-cinema-off'); hide(); return; }
+          if (isLandscape() && html.classList.contains('rmi-cinema-off')) { html.classList.remove('rmi-cinema-off'); hide(); return; }
+          enterFullscreen(c);
+        }
+
+        function onTapCapture(e) {
+          if (!isMobile()) return;
+          if (e.target.closest('.rmi-fs-btn')) return;
+          const c = context();
+          if (!isPlaying(c)) return;
+          let inMedia;
+          if (c.kind === 'home') {
+            inMedia = e.target.closest('#slideshowViewport .slide.active .slide-media, #slideshowViewport .slide.active .slide-video-media, #slideshowViewport .slide.active .home-pause-overlay-btn, #slideshowViewport .slide.active .slide-inner');
+          } else {
+            if (e.target.closest('.sti-v162-progress-hit')) return;
+            inMedia = e.target.closest('#stiProjectContainer .sti-v148-media-box');
+          }
+          if (!inMedia) return;
+          if (!btn.classList.contains('is-visible')) {
+            // first tap: reveal the fullscreen icon only (no pause)
+            e.preventDefault();
+            e.stopPropagation();
+            show(c);
+            return;
+          }
+          hide();   // second tap while the icon is visible: normal behaviour (pause)
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+          btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'rmi-fs-btn';
+          btn.innerHTML = ICON_ENTER;
+          btn.addEventListener('click', onButton);
+          document.body.appendChild(btn);
+          document.addEventListener('click', onTapCapture, true);
+          // hide on any swipe / navigation / rotation
+          let sx = 0, sy = 0;
+          document.addEventListener('touchstart', e => { if (e.touches[0]) { sx = e.touches[0].clientX; sy = e.touches[0].clientY; } }, { passive: true, capture: true });
+          document.addEventListener('touchmove', e => { if (e.touches[0] && Math.hypot(e.touches[0].clientX - sx, e.touches[0].clientY - sy) > 12) hide(); }, { passive: true, capture: true });
+          document.querySelectorAll('.nav-link, #navMenu a, #logoLink').forEach(a => a.addEventListener('click', hide));
+          const land = window.matchMedia(LAND_MQ);
+          const onOrient = () => { if (!land.matches) html.classList.remove('rmi-cinema-off'); hide(); };
+          if (land.addEventListener) land.addEventListener('change', onOrient); else if (land.addListener) land.addListener(onOrient);
+        });
+      })();
 
       document.addEventListener('touchstart', onTouchStart, { passive: true });
       document.addEventListener('touchmove', onTouchMoveProductionV196, { passive: true });
