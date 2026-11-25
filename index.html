@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <!-- Published site: script.js reads the site version from this value
        (working files read it from their name, index_rayanmadeit_V###.html). -->
-  <script>window.RMI_SITE_VERSION = 210;</script>
+  <script>window.RMI_SITE_VERSION = 211;</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="description" content="Rayan Made It — Paris-based composer and sound artist. Music production and sound design for artists, films and images.">
   <title>Rayan Made It — Music Production &amp; Sound Design</title>
@@ -1649,7 +1649,7 @@
     </div>
   </footer>
 
-  <!-- RAYAN MADE IT — V210 Smartphone Touch & Gesture Engine -->
+  <!-- RAYAN MADE IT — V211 Smartphone Touch & Gesture Engine -->
   <script>
     (function() {
       'use strict';
@@ -2137,11 +2137,17 @@
          'animation-delay' so it continues exactly where it was scrolling. A shared
          style declares the whole marquee animation with !important, which resets
          that delay to 0: the credits jumped back to their start at every change.
-         The delay set by script.js is re-applied with priority right after. */
+         The delay set by script.js is re-applied with priority right after.
+         V211: mobile only (desktop keeps its original behaviour). */
       document.addEventListener('DOMContentLoaded', function() {
         const prod = document.getElementById('production');
         if (!prod) return;
+        const MOBILE_MQ = '(max-width: 767px), (hover: none) and (pointer: coarse) and (max-height: 500px)';
         const fix = track => {
+          // V211: phones only. The desktop handles its credits transition
+          // differently and relies on that shared rule: forcing the delay there
+          // made ghost copies of the credits line appear under the cover.
+          if (!window.matchMedia(MOBILE_MQ).matches) return;
           const d = track.style.getPropertyValue('animation-delay');
           if (d && track.style.getPropertyPriority('animation-delay') !== 'important') {
             track.style.setProperty('animation-delay', d, 'important');
