@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <!-- Published site: script.js reads the site version from this value
        (working files read it from their name, index_rayanmadeit_V###.html). -->
-  <script>window.RMI_SITE_VERSION = 209;</script>
+  <script>window.RMI_SITE_VERSION = 210;</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="description" content="Rayan Made It — Paris-based composer and sound artist. Music production and sound design for artists, films and images.">
   <title>Rayan Made It — Music Production &amp; Sound Design</title>
@@ -1649,7 +1649,7 @@
     </div>
   </footer>
 
-  <!-- RAYAN MADE IT — V209 Smartphone Touch & Gesture Engine -->
+  <!-- RAYAN MADE IT — V210 Smartphone Touch & Gesture Engine -->
   <script>
     (function() {
       'use strict';
@@ -2131,6 +2131,33 @@
           if (land.addEventListener) land.addEventListener('change', onOrient); else if (land.addListener) land.addListener(onOrient);
         });
       })();
+
+      /* V210: SMOOTH CREDITS LINE ON PROJECT CHANGE. At the end of each project
+         transition script.js rebuilds the project and sets the credits marquee
+         'animation-delay' so it continues exactly where it was scrolling. A shared
+         style declares the whole marquee animation with !important, which resets
+         that delay to 0: the credits jumped back to their start at every change.
+         The delay set by script.js is re-applied with priority right after. */
+      document.addEventListener('DOMContentLoaded', function() {
+        const prod = document.getElementById('production');
+        if (!prod) return;
+        const fix = track => {
+          const d = track.style.getPropertyValue('animation-delay');
+          if (d && track.style.getPropertyPriority('animation-delay') !== 'important') {
+            track.style.setProperty('animation-delay', d, 'important');
+          }
+        };
+        new MutationObserver(muts => {
+          muts.forEach(m => {
+            if (m.type === 'attributes') { if (m.target.classList && m.target.classList.contains('v47-marquee-track')) fix(m.target); return; }
+            m.addedNodes.forEach(n => {
+              if (n.nodeType !== 1) return;
+              if (n.classList.contains('v47-marquee-track')) fix(n);
+              if (n.querySelectorAll) n.querySelectorAll('.v47-marquee-track').forEach(fix);
+            });
+          });
+        }).observe(prod, { childList: true, subtree: true, attributes: true, attributeFilter: ['style'] });
+      });
 
       document.addEventListener('touchstart', onTouchStart, { passive: true });
       document.addEventListener('touchmove', onTouchMoveProductionV196, { passive: true });
